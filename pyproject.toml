@@ -8,11 +8,48 @@ version = "0.1.0"
 description = "SSRF protection with DNS rebinding defense and IPv4-mapped IPv6 coverage"
 readme = "README.md"
 license = { text = "MIT" }
+license-files = ["LICENSE"]
+authors = [{ name = "Nate Richardson" }]
 requires-python = ">=3.10"
 dependencies = []
+keywords = ["security", "ssrf", "url-validation", "networking", "asyncio"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Internet",
+  "Topic :: Security",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/Nacho-Labs-LLC/nachos-ssrf"
+Repository = "https://github.com/Nacho-Labs-LLC/nachos-ssrf.git"
+Issues = "https://github.com/Nacho-Labs-LLC/nachos-ssrf/issues"
 
 [project.optional-dependencies]
 dev = ["pytest", "pytest-asyncio"]
+
+[tool.hatch.build]
+ignore-vcs = true
+
+[tool.hatch.build.targets.sdist]
+only-include = [
+  "LICENSE",
+  "README.md",
+  "nachos_ssrf",
+  "pyproject.toml",
+  "tests",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["nachos_ssrf"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

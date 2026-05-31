@@ -7,8 +7,22 @@ Port of the TypeScript `SSRFProtection` class from the nachos gateway, improved 
 
 ## Install
 
+Public package install path:
+
 ```
 pip install nachos-ssrf
+```
+
+Until the first PyPI release is live, install from a checkout instead:
+
+```bash
+python3 -m pip install .
+```
+
+Contributor/dev install:
+
+```bash
+python3 -m pip install -e .[dev]
 ```
 
 ## Quick Start
@@ -80,7 +94,7 @@ is correctly identified as private — no extra regex needed.
 
 ## Running Tests
 
-```
-pip install pytest pytest-asyncio
-pytest tests/
+```bash
+python3 -m pip install -e .[dev]
+python3 -m pytest tests/
 ```
